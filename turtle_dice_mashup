@@ -1,0 +1,23 @@
+import turtle 
+import random
+
+def roll(sides):
+    die=random.randrange(sides)
+    print(die)
+    return(die)
+
+  
+myTurtle = turtle.Turtle() 
+myWin = turtle.Screen() 
+  
+# Turtle to draw a spiral 
+#header
+def drawSpiral(myTurtle, linelen):
+    #body
+    myTurtle.forward(linelen) 
+    myTurtle.right(90)  #manually change this number for different angles
+    drawSpiral(myTurtle, linelen-10)
+    #return
+  
+drawSpiral(myTurtle, roll(1000)) #changes the size
+myWin.exitonclick() 
